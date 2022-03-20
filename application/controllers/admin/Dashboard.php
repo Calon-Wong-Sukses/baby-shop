@@ -18,9 +18,9 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
-        // $data['jadwal_kajian'] = $this->inventory_model->get_data('jadwal_kajian')->num_rows();
-        // $data['kajian'] = $this->inventory_model->get_data('kajian')->num_rows();
-        // $data['masjid'] = $this->inventory_model->get_data('masjid')->num_rows();
+        $data['kategori'] = $this->inventory_model->get_data('tbl_kategori')->num_rows();
+        $data['produk'] = $this->inventory_model->get_data('tbl_produk')->num_rows();
+        $data['user'] = $this->inventory_model->get_data('user')->num_rows();
         // $data['ustad'] = $this->inventory_model->get_data('ustad')->num_rows();
         // $data['user'] = $this->inventory_model->get_data('user')->num_rows();
 

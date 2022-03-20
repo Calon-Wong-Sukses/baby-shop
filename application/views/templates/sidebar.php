@@ -27,6 +27,12 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <li class="nav-item <?php if ($this->uri->segment(2) == 'kategori') echo 'active' ?>">
+                <a class="nav-link" href="<?= base_url('admin/kategori') ?>">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Kategori</span></a>
+            </li>
+
             <li class="nav-item <?php if ($this->uri->segment(2) == 'produk') echo 'active' ?>">
                 <a class="nav-link" href="<?= base_url('admin/produk') ?>">
                     <i class="fas fa-fw fa-calendar-alt"></i>

@@ -12,6 +12,16 @@
                 <?= form_error('nama_produk', '<div class="text-small text-danger">', '</div>') ?>
             </div>
             <div class="form-group">
+                <label>Kategori Produk</label>
+                <select name="id_kategori" class="form-control">
+                    <option value="">-- Pilih Kategori --</option>
+                    <?php foreach ($kategori as $k) : ?>
+                        <option value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?></option>
+                    <?php endforeach ?>
+                </select>
+                <?= form_error('id_kategori', '<div class="text-small text-danger">', '</div>') ?>
+            </div>
+            <div class="form-group">
                 <label>Harga Produk</label>
                 <input type="number" name="harga_produk" class="form-control">
                 <?= form_error('harga_produk', '<div class="text-small text-danger">', '</div>') ?>

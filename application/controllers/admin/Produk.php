@@ -18,7 +18,7 @@ class Produk extends CI_Controller
     public function index()
     {
         $data['title'] = 'Produk';
-        $data['produk'] = $this->inventory_model->get_data('tbl_produk')->result();
+        $data['produk'] = $this->inventory_model->get_produk();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -29,10 +29,11 @@ class Produk extends CI_Controller
     public function tambah()
     {
         $data['title'] = 'Tambah Produk';
+        $data['kategori'] = $this->inventory_model->get_data('tbl_kategori')->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
-        $this->load->view('admin/produk/tambah_produk');
+        $this->load->view('admin/produk/tambah_produk', $data);
         $this->load->view('templates/footer');
     }
 
@@ -60,6 +61,7 @@ class Produk extends CI_Controller
 
             $data = array(
                 'nama_produk'   => $this->input->post('nama_produk'),
+                'id_kategori'   => $this->input->post('id_kategori'),
                 'harga_produk'  => $this->input->post('harga_produk'),
                 'stok_produk'   => $this->input->post('stok_produk'),
                 'foto'          => $foto
@@ -75,6 +77,7 @@ class Produk extends CI_Controller
     {
         $data['title'] = 'Edit Produk';
         $data['produk'] = $this->db->query("SELECT * FROM tbl_produk WHERE id_produk='$id'")->result();
+        $data['kategori'] = $this->inventory_model->get_data('tbl_kategori')->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -106,6 +109,7 @@ class Produk extends CI_Controller
 
             $data = array(
                 'nama_produk'    => $this->input->post('nama_produk'),
+                'id_kategori'   => $this->input->post('id_kategori'),
                 'harga_produk'  => $this->input->post('harga_produk'),
                 'stok_produk'  => $this->input->post('stok_produk'),
             );

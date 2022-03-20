@@ -41,14 +41,22 @@ class Inventory_model extends CI_Model
         $password = set_value('password');
 
         $result = $this->db->where('username', $username)
-                           ->where('password', $password)
-                           ->limit(1)
-                           ->get('user');
-        if($result->num_rows() > 0){
+            ->where('password', $password)
+            ->limit(1)
+            ->get('user');
+        if ($result->num_rows() > 0) {
             return $result->row();
         } else {
             return false;
         }
+    }
+
+    public function get_produk()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_produk');
+        $this->db->join('tbl_kategori', 'tbl_produk.id_kategori = tbl_kategori.id_kategori', 'left');
+        return $this->db->get()->result();
     }
 }
 
