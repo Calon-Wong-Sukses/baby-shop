@@ -7,25 +7,30 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide mb-3" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?= base_url('assets/foto/slider1.jpg') ?>" class="d-block w-100" alt="...">
+                        <img src="<?= base_url('assets/foto/slider1.jpg') ?>" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= base_url('assets/foto/slider2.png') ?>" class="d-block w-100" alt="...">
+                        <img src="<?= base_url('assets/foto/slider1.jpg') ?>" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= base_url('assets/foto/slider1.jpg') ?>" class="d-block w-100" alt="...">
+                        <img src="<?= base_url('assets/foto/slider1.jpg') ?>" class="d-block w-100">
                     </div>
                 </div>
             </div>
             <hr>
 
-            <div class="card" style="width: 18rem;">
-                <img src="<?= base_url('assets/foto/slider1.jpg') ?>" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+            <div class="row text-center">
+                <?php foreach ($produk as $p) : ?>
+                    <div class="card mr-2 shadow" style="width: 18rem;">
+                        <img src="<?= base_url('assets/foto/' . $p->foto) ?>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $p->nama_produk ?></h5>
+                            <p class="card-text"><?= $p->deskripsi_produk ?></p>
+                            <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-search"></i> Detail</a>
+                            <a href="#" class="btn btn-info btn-sm"><i class="fas fa-cart-arrow-down"></i> Add To Cart</a>
+                        </div>
+                    </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>

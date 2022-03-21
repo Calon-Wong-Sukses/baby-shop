@@ -62,6 +62,7 @@ class Produk extends CI_Controller
             $data = array(
                 'nama_produk'   => $this->input->post('nama_produk'),
                 'id_kategori'   => $this->input->post('id_kategori'),
+                'deskripsi_produk'   => $this->input->post('deskripsi_produk'),
                 'harga_produk'  => $this->input->post('harga_produk'),
                 'stok_produk'   => $this->input->post('stok_produk'),
                 'foto'          => $foto
@@ -110,6 +111,7 @@ class Produk extends CI_Controller
             $data = array(
                 'nama_produk'    => $this->input->post('nama_produk'),
                 'id_kategori'   => $this->input->post('id_kategori'),
+                'deskripsi_produk'   => $this->input->post('deskripsi_produk'),
                 'harga_produk'  => $this->input->post('harga_produk'),
                 'stok_produk'  => $this->input->post('stok_produk'),
             );

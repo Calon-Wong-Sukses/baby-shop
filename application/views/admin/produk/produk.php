@@ -13,6 +13,7 @@
                         <th>No</th>
                         <th>Nama Produk</th>
                         <th>Kategori Produk</th>
+                        <th>Deskripsi Produk</th>
                         <th>Harga Produk</th>
                         <th>Stok Produk</th>
                         <th>Foto</th>
@@ -26,6 +27,7 @@
                             <td><?= $no++ ?></td>
                             <td><?= $p->nama_produk ?></td>
                             <td><?= $p->nama_kategori ?></td>
+                            <td><?= $p->deskripsi_produk ?></td>
                             <td><?= $p->harga_produk ?></td>
                             <td><?= $p->stok_produk ?></td>
                             <td><img src="<?= base_url('assets/foto/' . $p->foto) ?>" width="80px" height="60px"></td>

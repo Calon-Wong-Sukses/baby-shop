@@ -22,6 +22,11 @@
                 <?= form_error('id_kategori', '<div class="text-small text-danger">', '</div>') ?>
             </div>
             <div class="form-group">
+                <label>Deskripsi Produk</label>
+                <textarea name="deskripsi_produk" class="form-control"></textarea>
+                <?= form_error('deskripsi_produk', '<div class="text-small text-danger">', '</div>') ?>
+            </div>
+            <div class="form-group">
                 <label>Harga Produk</label>
                 <input type="number" name="harga_produk" class="form-control">
                 <?= form_error('harga_produk', '<div class="text-small text-danger">', '</div>') ?>
